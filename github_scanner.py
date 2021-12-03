@@ -385,8 +385,8 @@ def student_name_from(github_prefix: str, repo_name: str) -> str:
     else:
         # there might be a trailing dash and digits if the student did the clone thing multiple times
         # also, we're converting everything to lower-case
-        return re.sub("-\\d+$", "", m.group(1)).lower()
-
+        #return re.sub("-\\d+$", "", m.group(1)).lower()
+        return m.group(1).lower()
 
 def desired_user(github_prefix: str, ignore_list: List[str], name: str, ignore_str: str = "") -> bool:
     """
